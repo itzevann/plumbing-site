@@ -1,187 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Macomb Plumbing | 24/7 Emergency Plumber in Macomb</title>
+  <meta name="description" content="24/7 emergency plumber in Macomb. Fast response, same-day service, licensed & insured. Call now." />
 
-<title>Macomb Plumbing | 24/7 Emergency Plumber</title>
+  <style>
+    :root{
+      --navy:#0d3b66;
+      --navy2:#0a2f53;
+      --gold:#ffb703;
+      --bg:#f5f7fb;
+      --text:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --shadow: 0 12px 30px rgba(2,8,23,.12);
+      --shadow2: 0 10px 18px rgba(2,8,23,.10);
+      --radius: 14px;
+      --max: 1100px;
+    }
 
-<style>
-body{
-  font-family: system-ui, Arial;
-  margin:0;
-  background:#f6f7fb;
-  color:#111;
-}
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.35;
+    }
 
-.container{
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
+    a{ color:inherit; }
 
-/* HEADER */
-.header{
-  background:#0d3b66;
-  color:white;
-  padding:20px;
-  position:sticky;
-  top:0;
-  text-align:center;
-}
+    /* Layout */
+    .wrap{ width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
+    .spacer{ height:28px; }
 
-.btn{
-  background:#ffb703;
-  padding:14px 22px;
-  border-radius:10px;
-  text-decoration:none;
-  color:black;
-  font-weight:700;
-  display:inline-block;
-}
+    /* Header */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: linear-gradient(180deg, var(--navy), var(--navy2));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+      color:#fff;
+    }
+    .brand-badge{
+      width:34px; height:34px; border-radius:10px;
+      background: rgba(255,183,3,.16);
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,183,3,.35);
+    }
+    .brand-title{
+      font-weight:800; letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size:14px;
+    }
+    .brand-sub{
+      font-size:12px; opacity:.85; margin-top:2px;
+    }
+    .cta{
+      display:flex; align-items:center; gap:10px;
+    }
+    .cta .phone{
+      color:#fff; font-weight:700; font-size:14px; opacity:.95;
+      display:none;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:800;
+      background: var(--gold);
+      color:#111827;
+      box-shadow: 0 10px 18px rgba(255,183,3,.28);
+      border: 1px solid rgba(17,24,39,.12);
+      transition: transform .08s ease, filter .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ filter:brightness(.98); transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:70px 20px;
-  background:#0d3b66;
-  color:white;
-}
+    /* Hero */
+    .hero{
+      position:relative;
+      color:#fff;
+      padding: 54px 0 34px;
+      background:
+        linear-gradient(90deg, rgba(13,59,102,.88), rgba(13,59,102,.58)),
+        url("https://images.unsplash.com/photo-1581579185169-56c2a11c4e2e?auto=format&fit=crop&w=2000&q=70") center/cover no-repeat;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items:center;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 3.4vw, 44px);
+      letter-spacing:.2px;
+      line-height:1.1;
+      text-shadow: 0 10px 18px rgba(0,0,0,.22);
+    }
+    .hero p{
+      margin:0 0 16px;
+      font-size: 16px;
+      opacity:.95;
+    }
+    .hero-bullets{
+      margin:16px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+      max-width:520px;
+    }
+    .hero-bullets li{
+      display:flex; gap:10px; align-items:flex-start;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      padding:10px 12px;
+      border-radius:12px;
+      backdrop-filter: blur(6px);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--gold);
+      margin-top:5px;
+      flex:0 0 auto;
+    }
 
-.hero h1{
-  font-size:34px;
-  margin-bottom:10px;
-}
+    .hero-card{
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.18);
+      backdrop-filter: blur(8px);
+    }
+    .hero-card h3{
+      margin:0 0 10px;
+      font-size: 16px;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      opacity:.95;
+    }
+    .big-phone{
+      font-size: 28px;
+      font-weight:900;
+      letter-spacing:.5px;
+      margin: 0 0 6px;
+    }
+    .small{
+      font-size: 13px; opacity:.9; margin:0 0 14px;
+    }
+    .btn-wide{
+      width:100%;
+      padding:14px 16px;
+      font-size:16px;
+      border-radius:14px;
+    }
 
-.hero p{
-  opacity:.9;
-  margin-bottom:25px;
-}
+    /* Trust row */
+    .trust{
+      background:#fff;
+      margin-top:-18px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 16px 14px;
+    }
+    .trust-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .trust-item{
+      background: #f8fafc;
+      border: 1px solid #eef2f7;
+      border-radius: 14px;
+      padding: 12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      min-height: 56px;
+    }
+    .icon{
+      width:34px; height:34px; border-radius:12px;
+      display:grid; place-items:center;
+      background: rgba(255,183,3,.18);
+      border: 1px solid rgba(255,183,3,.35);
+      color:#111827;
+      flex:0 0 auto;
+      font-weight:900;
+    }
+    .trust-title{ font-weight:800; font-size:13px; }
+    .trust-sub{ font-size:12px; color:var(--muted); margin-top:2px; }
 
-/* TRUST BAR */
-.trust{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:12px;
-  margin-top:-20px;
-}
+    /* Sections */
+    section{ padding: 34px 0; }
+    .section-title{
+      text-align:center;
+      margin: 0 0 18px;
+      font-size: 24px;
+      letter-spacing:.2px;
+    }
+    .section-sub{
+      text-align:center;
+      margin: -6px 0 18px;
+      color:var(--muted);
+    }
 
-.trust div{
-  background:white;
-  padding:16px;
-  border-radius:12px;
-  text-align:center;
-  font-weight:600;
-}
+    /* Services cards */
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid #eef2f7;
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      display:flex;
+      flex-direction:column;
+    }
+    .card img{
+      width:100%;
+      height: 150px;
+      object-fit: cover;
+      display:block;
+    }
+    .card-body{
+      padding: 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .card h4{ margin:0; font-size:16px; }
+    .card p{ margin:0; color:var(--muted); font-size:13px; }
+    .card .btn{
+      margin-top:auto;
+      width:100%;
+      border-radius:12px;
+      padding:12px 14px;
+    }
 
-/* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-  margin-top:30px;
-}
+    /* Service area + CTA */
+    .area{
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 16px;
+      box-shadow: var(--shadow2);
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items:center;
+    }
+    .area h3{ margin:0 0 6px; }
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .pill{
+      background:#f1f5f9;
+      border:1px solid #e2e8f0;
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:12px;
+      color:#0f172a;
+    }
 
-.card{
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  text-align:center;
-  box-shadow:0 6px 16px rgba(0,0,0,.08);
-}
+    /* FAQ */
+    details{
+      background:#fff;
+      border:1px solid #eef2f7;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: var(--shadow2);
+    }
+    details + details{ margin-top:10px; }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .faq p{ margin:10px 0 0; color:var(--muted); }
 
-.card h3{
-  margin-bottom:10px;
-}
+    /* Footer CTA */
+    .footer-cta{
+      background: linear-gradient(180deg, var(--navy), var(--navy2));
+      color:#fff;
+      padding: 42px 0;
+      margin-top: 12px;
+    }
+    .footer-cta .box2{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:center;
+      text-align:center;
+    }
+    .footer-cta h2{ margin:0; font-size:28px; }
+    .footer-cta p{ margin:0; opacity:.92; max-width:680px; }
 
-/* CTA */
-.cta{
-  background:#0d3b66;
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-  margin-top:40px;
-}
+    .fineprint{
+      text-align:center;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      margin-top: 12px;
+    }
 
-footer{
-  text-align:center;
-  padding:20px;
-  font-size:12px;
-  color:#666;
-}
-</style>
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .trust-grid{ grid-template-columns: repeat(2, 1fr); }
+      .cards{ grid-template-columns: 1fr; }
+      .area{ grid-template-columns: 1fr; }
+      .cta .phone{ display:none; }
+    }
+    @media (min-width: 901px){
+      .cta .phone{ display:block; }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#">
+        <div class="brand-badge">🔧</div>
+        <div>
+          <div class="brand-title">Macomb Plumbing</div>
+          <div class="brand-sub">24/7 Emergency Service</div>
+        </div>
+      </a>
 
-<!-- HEADER -->
-<div class="header">
-  <strong>Macomb Plumbing</strong><br><br>
-  <a class="btn" href="tel:5865551234">CALL NOW</a>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>24/7 Emergency Plumber in Macomb</h1>
-  <p>Fast Response • Same-Day Service • Licensed & Insured</p>
-  <a class="btn" href="tel:5865551234">Call (586) 555-1234</a>
-</div>
-
-<div class="container">
-
-  <!-- TRUST -->
-  <div class="trust">
-    <div>⏱ Same-Day Service</div>
-    <div>🛡 Licensed & Insured</div>
-    <div>💬 Upfront Pricing</div>
-    <div>📍 Local Macomb Service</div>
-  </div>
-
-  <!-- SERVICES -->
-  <h2 style="text-align:center;margin-top:40px;">Our Services</h2>
-
-  <div class="services">
-    <div class="card">
-      <h3>🚨 Emergency Plumbing</h3>
-      <a class="btn" href="tel:5865551234">Call Now</a>
-    </div>
-
-    <div class="card">
-      <h3>🚿 Drain Cleaning</h3>
-      <a class="btn" href="tel:5865551234">Call Now</a>
-    </div>
-
-    <div class="card">
-      <h3>🚽 Clogged Toilets</h3>
-      <a class="btn" href="tel:5865551234">Call Now</a>
-    </div>
-
-    <div class="card">
-      <h3>💧 Leak Repairs</h3>
-      <a class="btn" href="tel:5865551234">Call Now</a>
-    </div>
-
-    <div class="card">
-      <h3>🔥 Water Heater Repair</h3>
-      <a class="btn" href="tel:5865551234">Call Now</a>
-    </div>
-
-    <div class="card">
-      <h3>🛠 Sewer Line Issues</h3>
-      <a class="btn" href="tel:5865551234">Call Now</a>
+      <div class="cta">
+        <!-- Optional: shows on desktop -->
+        <div class="phone">Call: <span style="font-weight:900;">(586) 555-1234</span></div>
+        <a class="btn" href="tel:5865551234">CALL NOW</a>
+      </div>
     </div>
   </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>24/7 Emergency Plumber in Macomb</h1>
+        <p>Fast response • Same-day service • Licensed & insured</p>
+
+        <a class="btn btn-wide" href="tel:5865551234">Call (586) 555-1234</a>
+
+        <ul class="hero-bullets">
+          <li><span class="dot"></span><div><b>Emergency response</b> for leaks, burst pipes, and backups.</div></li>
+          <li><span class="dot"></span><div><b>Upfront pricing</b> before work begins — no surprises.</div></li>
+          <li><span class="dot"></span><div><b>Local service</b> in Macomb & nearby areas.</div></li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
+        <h3>Need help now?</h3>
+        <div class="big-phone">(586) 555-1234</div>
+        <div class="small">Call anytime for urgent plumbing issues.</div>
+        <a class="btn btn-wide" href="tel:5865551234">CALL NOW FOR IMMEDIATE HELP</a>
+        <div class="small" style="margin-top:10px;">Typical issues: clogged drains, leaks, toilets, water heaters.</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Trust row -->
+  <div class="wrap">
+    <div class="trust">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="icon">⏱</div>
+          <div>
+            <div class="trust-title">Fast Response</div>
+            <div class="trust-sub">Same-day availability</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="icon">🛡</div>
+          <div>
+            <div class="trust-title">Licensed & Insured</div>
+            <div class="trust-sub">Trusted local service</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="icon">💬</div>
+          <div>
+            <div class="trust-title">Upfront Pricing</div>
+            <div class="trust-sub">Clear estimates first</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="icon">📍</div>
+          <div>
+            <div class="trust-title">Serving Macomb</div>
+            <div class="trust-sub">And nearby areas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- Services -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Our Services</h2>
+      <div class="section-sub">Tap a service to call now.</div>
+
+<div class="cards">
+  <div class="card">
+    <img alt="Emergency plumbing" src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <div class="card-body">
+      <h4>Emergency Plumbing</h4>
+      <p>Leaks, burst pipes, backups — fast help when you need it.</p>
+      <a class="btn" href="tel:5865551234">CALL NOW</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img alt="Drain cleaning" src="https://images.unsplash.com/photo-1654440122140-f1fc995ddb34?q=80&w=1097&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <div class="card-body">
+      <h4>Drain Cleaning</h4>
+      <p>Clogged sinks, tubs, and main lines — get water flowing again.</p>
+      <a class="btn" href="tel:5865551234">CALL NOW</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img alt="Clogged toilet" src="https://plus.unsplash.com/premium_photo-1663047170515-66632d2a374d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <div class="card-body">
+      <h4>Clogged Toilets</h4>
+      <p>Fast fixes for clogs and overflows — same-day service.</p>
+      <a class="btn" href="tel:5865551234">CALL NOW</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img alt="Leak repair" src="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <div class="card-body">
+      <h4>Leak Repairs</h4>
+      <p>Stop leaks under sinks, in walls, or fixtures before damage spreads.</p>
+      <a class="btn" href="tel:5865551234">CALL NOW</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img alt="Water heater repair" src="https://images.unsplash.com/photo-1620653713380-7a34b773fef8?q=80&w=945&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <div class="card-body">
+      <h4>Water Heater Repair</h4>
+      <p>No hot water? We diagnose and repair quickly.</p>
+      <a class="btn" href="tel:5865551234">CALL NOW</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img alt="Sewer line issues" src="https://images.unsplash.com/photo-1521207418485-99c705420785?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <div class="card-body">
+      <h4>Sewer Line Issues</h4>
+      <p>Backups and slow drains — we’ll identify the issue and fix it.</p>
+      <a class="btn" href="tel:5865551234">CALL NOW</a>
+    </div>
+  </div>
 </div>
+  </section>
 
-<!-- BOTTOM CTA -->
-<div class="cta">
-  <h2>Need a plumber right now?</h2>
-  <a class="btn" href="tel:5865551234">Call (586) 555-1234</a>
-</div>
+  <!-- Service Area -->
+  <section>
+    <div class="wrap">
+      <div class="area">
+        <div>
+          <h3>Serving Macomb & Nearby Areas</h3>
+          <div style="color:var(--muted);">Call now for immediate help. We focus on fast response and clear pricing.</div>
+          <div class="pill-row">
+            <span class="pill">Macomb</span>
+            <span class="pill">Clinton Township</span>
+            <span class="pill">Sterling Heights</span>
+            <span class="pill">Warren</span>
+            <span class="pill">Shelby Township</span>
+          </div>
+        </div>
+        <div>
+          <a class="btn btn-wide" href="tel:5865551234">CALL NOW</a>
+          <div style="margin-top:10px; color:var(--muted); font-size:12px; text-align:center;">
+            Emergency? Calling is fastest.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2026 Macomb Plumbing
-</footer>
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <h2 class="section-title">FAQ</h2>
+      <div class="section-sub">Quick answers before you call.</div>
 
+      <details>
+        <summary>How fast can you arrive?</summary>
+        <p>Response time depends on availability, but we prioritize emergency calls and aim for same-day service whenever possible.</p>
+      </details>
+
+      <details>
+        <summary>Do you provide upfront pricing?</summary>
+        <p>Yes — pricing is discussed before work begins so you know what to expect.</p>
+      </details>
+
+      <details>
+        <summary>Do you offer 24/7 emergency service?</summary>
+        <p>Yes — call anytime for urgent plumbing issues.</p>
+      </details>
+
+      <details>
+        <summary>What areas do you serve?</summary>
+        <p>Macomb and nearby areas including Clinton Township, Sterling Heights, Warren, and surrounding neighborhoods.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <footer class="footer-cta">
+    <div class="wrap">
+      <div class="box2">
+        <h2>Need a plumber right now?</h2>
+        <p>Call for immediate help with leaks, clogs, toilets, and water heaters in Macomb and nearby areas.</p>
+        <a class="btn btn-wide" href="tel:5865551234">Call (586) 555-1234</a>
+        <div class="fineprint">© <span id="y"></span> Macomb Plumbing</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
